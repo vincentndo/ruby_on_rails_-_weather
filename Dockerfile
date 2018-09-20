@@ -9,7 +9,6 @@ COPY --from=node /usr/lib/libgcc* /usr/lib/libstdc* /usr/lib/
 WORKDIR /app
 COPY --from=node /app .
 
-RUN bundle config --global frozen 1
 COPY Gemfile Gemfile.lock ./
 RUN apk add --no-cache \
   build-base \
@@ -20,7 +19,8 @@ RUN apk add --no-cache \
   busybox-extras \
   bash \
   postgresql-client \
-  curl
+  curl \
+  python
 
 RUN bundle install
 COPY . .

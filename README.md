@@ -1,24 +1,9 @@
-# README
+# Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example project of a [Ruby on Rails](http://rubyonrails.org) web application that runs in Glitch.com.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Notes
+- Using Ruby on Rails v5.1.4 with Ruby v2.3.1 
+- Glitch instances only have 128mb of disk space so it will be unusable to devolop using this environment.
+- Added the `.gemrc` file to avoid installing documentation to use as less disk space as possible.
+- Includes an axample of a `glitch.json` file allowing the application to run with the default Glitch configuration.
