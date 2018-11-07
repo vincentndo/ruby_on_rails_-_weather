@@ -1,1 +1,21 @@
 <!-- Your code here -->
+<h1>Hello</h1>
+<%= button_to "view", "/cities/view", :class => "button medium", :method => :get %>
+
+<br>
+<% if @cities.size == 0 %>
+
+  <h2>No city saved!</h2>
+
+<% else %>
+
+  <% @cities.each do |city| %>
+  <h2><%=city.name%></h2>
+  <p>Temperature: <%= city.weather[:temperature] %></p>
+  <% end %>
+
+<% end %>
+
+<br>
+<h2>Add a new city</h2>
+<%= button_to "New", "/cities/new", :class => "button medium", :method => :get %>

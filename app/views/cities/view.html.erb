@@ -1,0 +1,38 @@
+<%= button_to "main", root_path, :class => "button medium", :method => :get %>
+
+<br>
+<% if params[:city] %>
+
+  <% if @city %>
+
+    <h2><%= @city.name %></h2>
+    <p>Population: <%= @city.population %></p>
+    <p>Landmark: <%= @city.landmark %></p>
+    <p>Temperature: <%= @city.weather[:temperature] %></p>
+    <%= button_to "Update", "/cities/old", :class => "button medium", :method => :get, params: {city: @city} %>
+
+  <% else %>
+    <p>There is no city named <%= params[:city] %></p>
+  <% end %>
+
+<% else %>
+
+  <% if @cities.size == 0 %>
+    <h2>No city saved!</h2>
+  <% else %>
+
+    <% @cities.each do |city| %>
+    <h2><%=city.name%></h2>
+    <p>Population: <%= city.population %></p>
+    <p>Landmark: <%= city.landmark %></p>
+    <p>Temperature: <%= city.weather[:temperature] %></p>
+    <%= button_to "Update", "/cities/old", :class => "button medium", :method => :get, params: {city: city.name} %>
+    <% end %>
+
+  <% end %>
+
+<% end %>
+
+<br>
+<h2>Add a new city</h2>
+<%= button_to "New", "/cities/new", :class => "button medium", :method => :get %>

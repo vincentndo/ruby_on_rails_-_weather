@@ -1,0 +1,10 @@
+<h2>Update the city <%= @city.name %></h2>
+
+<%= form_with local: true, url: "/cities/update", method: "patch" do |form| %>
+  <p>City</p> <%= form.text_field :city, value: @city.name, placeholder: @city.name, readonly: true %>
+  <p>Population</p> <%= form.text_field :population, placeholder: @city.population %>
+  <p>Most Famous Landmark </p> <%= form.text_field :landmark, placeholder: @city.landmark %>
+  <br>
+  <br>
+  <%= form.submit "Update" %>
+<% end %>
